@@ -1,44 +1,25 @@
 {
-  "name": "figmaai",
+  "name": "figmaai-monorepo",
   "version": "1.0.0",
-  "description": "Your Figma Plugin",
-  "main": "code.js",
+  "description": "AI designer plugin for Figma - Monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "lint": "eslint --ext .ts,.tsx --ignore-pattern node_modules .",
-    "lint:fix": "eslint --ext .ts,.tsx --ignore-pattern node_modules --fix .",
-    "watch": "npm run build -- --watch"
+    "build": "cd packages/plugin && bun run build && cd ../server && bun run build",
+    "dev": "cd packages/server && bun run dev",
+    "build:plugin": "cd packages/plugin && bun run build",
+    "build:server": "cd packages/server && bun run build",
+    "dev:server": "cd packages/server && bun run dev",
+    "watch:plugin": "cd packages/plugin && bun run watch",
+    "lint": "cd packages/plugin && bun run lint",
+    "lint:fix": "cd packages/plugin && bun run lint:fix"
   },
-  "author": "",
-  "license": "",
+  "author": "Volodymyr Zakhovaiko",
+  "license": "MIT",
   "devDependencies": {
-    "@figma/eslint-plugin-figma-plugins": "*",
-    "@figma/plugin-typings": "*",
-    "@typescript-eslint/eslint-plugin": "^6.12.0",
-    "@typescript-eslint/parser": "^6.12.0",
-    "eslint": "^8.54.0",
-    "typescript": "^5.3.2"
-  },
-  "eslintConfig": {
-    "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:@figma/figma-plugins/recommended"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "project": "./tsconfig.json"
-    },
-    "root": true,
-    "rules": {
-      "@typescript-eslint/no-unused-vars": [
-        "error",
-        {
-          "argsIgnorePattern": "^_",
-          "varsIgnorePattern": "^_",
-          "caughtErrorsIgnorePattern": "^_"
-        }
-      ]
-    }
+    "typescript": "5.8.3",
+    "prettier": "3.5.3"
   }
 }

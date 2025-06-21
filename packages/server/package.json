@@ -1,0 +1,17 @@
+{
+  "name": "figmaai-server",
+  "version": "1.0.0",
+  "description": "Hono server for AI Designer plugin",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "bun run --hot index.ts",
+    "start": "bun run index.ts",
+    "build": "bun build index.ts --outdir dist --target bun"
+  },
+  "dependencies": {
+    "@ai-sdk/google": "1.2.19",
+    "ai": "4.3.16",
+    "hono": "4.6.14",
+    "zod": "3.25.67"
+  }
+}

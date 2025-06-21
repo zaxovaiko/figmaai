@@ -2,7 +2,7 @@
   "name": "figmaai",
   "id": "1518283400575708405",
   "api": "1.0.0",
-  "main": "code.js",
+  "main": "dist/index.js",
   "capabilities": [],
   "enableProposedApi": false,
   "documentAccess": "dynamic-page",
@@ -11,8 +11,9 @@
   ],
   "ui": "ui.html",
   "networkAccess": {
-    "allowedDomains": [
-      "none"
+    "allowedDomains": ["none"],
+    "devAllowedDomains": [
+      "http://localhost:3000"
     ]
   }
 }

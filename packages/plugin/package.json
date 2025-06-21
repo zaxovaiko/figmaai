@@ -1,0 +1,15 @@
+{
+  "name": "figmaai-plugin",
+  "version": "1.0.0",
+  "description": "AI designer plugin for Figma",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "bun build ./src/index.ts --outdir dist --target node",
+    "watch": "bun build ./src/index.ts --outdir dist --target node --watch",
+    "lint": "eslint --ext .ts,.tsx --ignore-pattern node_modules .",
+    "lint:fix": "eslint --ext .ts,.tsx --ignore-pattern node_modules --fix ."
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "1.114.0"
+  }
+}
